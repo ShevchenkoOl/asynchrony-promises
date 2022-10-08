@@ -1,7 +1,3 @@
-// import flatpickr from 'flatpickr';
-// import 'flatpickr/dist/flatpickr.min.css';
-// import Notiflix from 'notiflix';
-
 import flatpickr from 'flatpickr';
 import Notiflix from 'notiflix';
 
@@ -15,7 +11,7 @@ const minutes = document.querySelector('[data-minutes]');
 const seconds = document.querySelector('[data-seconds]');
 const text = document.querySelector('.label');
 
-//timerHtml.style.color = `green`;
+
 timerHtml.style.fontSize = '20px';
 timerHtml.style.display = 'flex';
 timerHtml.style.justifycontent = 'space-between';
