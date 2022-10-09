@@ -40,25 +40,6 @@ function createPromise(position, delay) {
   });
 
 
-
-
-// function createPromise(position, delay) {
-//     const shouldResolve = Math.random() > 0.3;
-//     if (shouldResolve) {
-//       // Fulfill
-//     } else {
-//       // Reject
-//     }
-//   }
-
-// createPromise(2, 1500)
-//   .then(({ position, delay }) => {
-//     Notiflix.Notify.failure(`✅ Fulfilled promise ${position} in ${delay}ms`);
-//   })
-//   .catch(({ position, delay }) => {
-//     Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
-//   });
-
 // 1. Є функція createPromise(position, delay) - ВАЖЛИВО - вона повинна ВЕРТАТИ новий Promise
 // 2. У тілі промісу, повинна бути затримка виклику колбеків resolve і reject, яка задається через параметр delay з функції (підказка - setTimeout).
 // 3. До тіла промісу потрібно причепити методи then і catch, які будуь виконуватися з аргументами з колбеків resolve та reject. Аргументом що в resolve, що в reject буде об’єкт { position, delay }, а then і catch будуть виконувати свій колбек з переданими їм аргументами (у завданні колбеком методів всередині then i catch буде console.log)
