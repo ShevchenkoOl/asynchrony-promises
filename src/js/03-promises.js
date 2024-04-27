@@ -44,10 +44,41 @@
 //   });
 
 
+//Промисі вікористовуються для запитів на бекенд. Ствлримо якись запит:
+// const resp = fetch('https://pokeapi.co/api/v2/pokemon/ditto');
+// console.log(resp);
+
+// resp
+// .then(resp => resp.json())
+// .then(data => console.log(data))
+// .catch(err => console.log(err))
+
+
+import Notiflix from "notiflix";
+
+const form = document.querySelector('.form');
+const firstDelay = document.querySelector('input[name=delay]');
+const step = document.querySelector('input[name=step]');
+const inputAmount = document.querySelector('input[name=amount]')
 
 
 
+function createPromise(position, delay) {
+    setInterval(()=>{ const shouldResolve = Math.random() > 0.3;
+    if (shouldResolve) {
+      // Fulfill
+    } else {
+      // Reject
+    }}, amount)
+  }
 
+  form.addEventListener('submit', createPromise);
+  
+form.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    const amount = inputAmount.value;
+    console.log(amount);
+  });
 
 
 
