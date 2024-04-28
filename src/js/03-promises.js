@@ -43,7 +43,6 @@
 //     console.error(err);
 //   });
 
-
 //Промисі вікористовуються для запитів на бекенд. Ствлримо якись запит:
 // const resp = fetch('https://pokeapi.co/api/v2/pokemon/ditto');
 // console.log(resp);
@@ -53,92 +52,43 @@
 // .then(data => console.log(data))
 // .catch(err => console.log(err))
 
+const form = document.querySelector('.form');
+const firstDelay = document.querySelector('input[name=delay]');
+const step = document.querySelector('input[name=step]');
+const inputAmount = document.querySelector('input[name=amount]');
 
-console.log('1');
+function createPromise(evt, position, delay) {
+  evt.preventDefault();
+  const promise = new Promise((res, rej) => {
+    setTimeout(() => {
+      const shouldResolve = Math.random() > 0.3;
+      if (shouldResolve) {
+        res({ position, delay });
+      } else {
+        rej({ position, delay });
+      }
+    }, delay);
+  });
+  return promise;
+}
 
-// import Notiflix from "notiflix";
+form.addEventListener('submit', evt => {
+  evt.preventDefault();
 
-// const form = document.querySelector('.form');
-// const firstDelay = document.querySelector('input[name=delay]');
-// const step = document.querySelector('input[name=step]');
-// const inputAmount = document.querySelector('input[name=amount]');
+  const firstDelay = Number(firstDelay.value);
+  const delayStep = Number(step.value);
+  const amount = Number(inputAmount.value);
 
-
-// function createPromise() {
-//    console.log("Hi");
-// }
-
-// const checkin = (evt) => {
-//   evt.preventDefault();
-//   const amount = inputAmount.value;
-//   for (let i = 0; i < amount; i+=1) {
-//   createPromise();
-// }
-// }
-
-// form.addEventListener('submit', checkin);
-//form.addEventListener('submit', createPromise);
- 
-
-
-// form.addEventListener('submit', (evt) => {
-//     evt.preventDefault();
-//     const amount = inputAmount.value;
-//     console.log(amount);
-//   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import Notiflix from 'notiflix';
-
-// const delay = document.querySelector('input[name="delay"]');
-// const step = document.querySelector('input[name="step"]');
-// const amount = document.querySelector('input[name="amount"]');
-// const btnSubmit = document.querySelector('button[type="submit"]');
-// //console.log(btnSubmit);
-
-// function createPromise(position, delay) {
-//     const promise = new Promise((resolve, reject) => {
-//       setTimeout(() => {
-//         const shouldResolve = Math.random() > 0.3;
-//         if (shouldResolve) {
-//           resolve({ position, delay });
-//         } else {
-//           reject({ position, delay });
-//         }
-//       }, delay);
-//     });
-//     return promise;
-//   }
-
-//   btnSubmit.addEventListener('click', e => {
-//     e.preventDefault();
-//     let firstDelay = Number(delay.value);
-//     let delayStep = Number(step.value);
-//     for (let i = 0; i < amount.value; i++) {
-//       createPromise(1 + i, firstDelay + i * delayStep)
-//         .then(({ position, delay }) => {
-//           Notiflix.Notify.success(
-//             `✅ Fulfilled promise ${position} in ${delay}ms`
-//           );
-//         })
-//         .catch(({ position, delay }) => {
-//           Notiflix.Notify.failure(
-//             `❌ Rejected promise ${position} in ${delay}ms`
-//           );
-//         });
-//     }
-//   });
+  for (let i = 0; i < amount; i += 1) {
+    createPromise(1 + i, firstDelay + i * delayStep)
+      .then(({ position, delay }) => {
+        console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+      })
+      .catch(({ position, delay }) => {
+        console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+      });
+  }
+});
 
 // 1. Є функція createPromise(position, delay) - ВАЖЛИВО - вона повинна ВЕРТАТИ новий Promise
 // 2. У тілі промісу, повинна бути затримка виклику колбеків resolve і reject, яка задається через параметр delay з функції (підказка - setTimeout).
