@@ -1,21 +1,21 @@
 {
-  "name": "parcel-project-template",
+  "name": "asynchrony-promises",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://ShevchenkoOl.github.io/goit-js-hw-09",
+  "homepage": "https://shevchenkool.github.io/asynchrony-promises/",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-09/"
+    "build": "parcel build src/*.html --public-url /asynchrony-promises/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
+    "url": "git+https://github.com/ShevchenkoOl/asynchrony-promises.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Oleksii Shevchenko <uzlabini@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
+    "url": "https://github.com/ShevchenkoOl/asynchrony-promises.git/issues"
   },
   "dependencies": {
     "flatpickr": "^4.6.13",

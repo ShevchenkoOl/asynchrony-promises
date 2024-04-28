@@ -54,31 +54,38 @@
 // .catch(err => console.log(err))
 
 
-import Notiflix from "notiflix";
+console.log('1');
 
-const form = document.querySelector('.form');
-const firstDelay = document.querySelector('input[name=delay]');
-const step = document.querySelector('input[name=step]');
-const inputAmount = document.querySelector('input[name=amount]')
+// import Notiflix from "notiflix";
+
+// const form = document.querySelector('.form');
+// const firstDelay = document.querySelector('input[name=delay]');
+// const step = document.querySelector('input[name=step]');
+// const inputAmount = document.querySelector('input[name=amount]');
 
 
+// function createPromise() {
+//    console.log("Hi");
+// }
 
-function createPromise(position, delay) {
-    setInterval(()=>{ const shouldResolve = Math.random() > 0.3;
-    if (shouldResolve) {
-      // Fulfill
-    } else {
-      // Reject
-    }}, amount)
-  }
+// const checkin = (evt) => {
+//   evt.preventDefault();
+//   const amount = inputAmount.value;
+//   for (let i = 0; i < amount; i+=1) {
+//   createPromise();
+// }
+// }
 
-  form.addEventListener('submit', createPromise);
-  
-form.addEventListener('submit', (evt) => {
-    evt.preventDefault();
-    const amount = inputAmount.value;
-    console.log(amount);
-  });
+// form.addEventListener('submit', checkin);
+//form.addEventListener('submit', createPromise);
+ 
+
+
+// form.addEventListener('submit', (evt) => {
+//     evt.preventDefault();
+//     const amount = inputAmount.value;
+//     console.log(amount);
+//   });
 
 
 
